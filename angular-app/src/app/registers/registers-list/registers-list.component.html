@@ -1,3 +1,30 @@
-<p>
-  registers-list works!
-</p>
+<nb-card>
+  <nb-list>
+    <nb-list-item *ngFor="let user of users">
+      <nb-user [name]="user.nome" [title]="user.apelido">
+      </nb-user>
+    </nb-list-item>
+  </nb-list>
+  <div class='pagination'>
+    <button nbButton 
+      [disabled]='!(this.pageId > 1)' 
+      [routerLink]="['/list', this.pageId-1]" 
+      class='pagination-prev'> 
+      < 
+    </button>
+    <button nbButton 
+      status="basic" 
+      *ngFor="let number of this.pages" 
+      [disabled]="number == this.pageId" 
+      [routerLink]="['/list', number]"
+      class="pagination-number">
+      {{number}}
+    </button>
+    <button nbButton  
+      [disabled]='!(this.pageId < this.numPages)' 
+      [routerLink]="['/list', this.pageId+1]" 
+      class='pagination-next'> 
+      > 
+    </button>
+  </div>
+</nb-card>

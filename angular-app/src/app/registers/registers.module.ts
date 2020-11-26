@@ -6,7 +6,8 @@ import {
   NbListModule, 
   NbCardModule, 
   NbUserModule, 
-  NbButtonModule 
+  NbButtonModule,
+  NbAlertModule
 } from '@nebular/theme';
 
 @NgModule({
@@ -19,7 +20,8 @@ import {
     NbCardModule,
     NbListModule,
     NbUserModule,
-    NbButtonModule
+    NbButtonModule,
+    NbAlertModule
   ]
 })
 export class RegistersModule { }

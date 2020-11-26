@@ -15,6 +15,7 @@ export class RegistersListComponent implements OnInit {
   numPages: number;
   pages: number[];
   numRegisters: number;
+  error: boolean = false;
 
   constructor(
     private usersService: UsersService,
@@ -34,6 +35,7 @@ export class RegistersListComponent implements OnInit {
               this.pages = Array(this.numPages).fill(1).map((x,i)=>i+1);
               this.numRegisters = res['registros'];
             } else {
+              this.error = true;
               throw "Error on get page";
             }
           }

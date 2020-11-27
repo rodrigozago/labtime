@@ -4,10 +4,10 @@
   </nb-alert>
 </div>
 <nb-card  *ngIf="!this.error">
+  <p> Clique no usuário para detalhes... </p>
   <nb-list>
     <nb-list-item *ngFor="let user of users">
-      <nb-user [name]="user.nome" [title]="user.apelido">
-      </nb-user>
+      <a class="details-link" (click)="showDetails(user)"><nb-user [name]="user.nome" [title]="user.apelido"></nb-user></a>
     </nb-list-item>
   </nb-list>
   <div class='pagination'>

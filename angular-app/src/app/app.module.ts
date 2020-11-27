@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 // Module to import others modules and services to be instantiated only once
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbWindowModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
@@ -23,6 +23,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbLayoutModule,
     NbEvaIconsModule,
     NbSidebarModule,
+    NbWindowModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

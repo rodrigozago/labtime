@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../core/users.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { User } from '../../interfaces/user.interface'
+import { User } from '../../interfaces/user.interface';
+import { NbWindowService } from '@nebular/theme';
+import { RegisterDetailsComponent } from '../register-details/register-details.component';
 
 @Component({
   selector: 'app-registers-list',
@@ -19,7 +21,12 @@ export class RegistersListComponent implements OnInit {
 
   constructor(
     private usersService: UsersService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private windowService: NbWindowService) {
+  }
+
+  showDetails(details) {
+    const windowRef = this.windowService.open(RegisterDetailsComponent, { title: 'Detalhes de '+details.nome, context: { details: details} });
   }
 
   ngOnInit() {

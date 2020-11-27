@@ -7,12 +7,15 @@ import {
   NbCardModule, 
   NbUserModule, 
   NbButtonModule,
-  NbAlertModule
+  NbAlertModule,
+  NbWindowModule
 } from '@nebular/theme';
+import { RegisterDetailsComponent } from './register-details/register-details.component';
 
 @NgModule({
   declarations: [
-    RegistersListComponent
+    RegistersListComponent,
+    RegisterDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +24,11 @@ import {
     NbListModule,
     NbUserModule,
     NbButtonModule,
-    NbAlertModule
-  ]
+    NbAlertModule,
+    NbWindowModule.forChild(),
+  ],
+  entryComponents: [
+    RegisterDetailsComponent
+  ],
 })
 export class RegistersModule { }
